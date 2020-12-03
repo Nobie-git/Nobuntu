@@ -30,7 +30,7 @@ Top.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
 Top.BackgroundTransparency = 0.500
 Top.BorderColor3 = Color3.fromRGB(97, 204, 204)
 Top.Position = UDim2.new(0.100000001, 0, 0.5, 0)
-Top.Size = UDim2.new(0.150000006, 0, 0.0199999996, 0)
+Top.Size = UDim2.new(0.129999995, 0, 0.0149999997, 0)
 
 Main.Name = "Main"
 Main.Parent = Top
