@@ -81,4 +81,4 @@ UserInputService.InputChanged:Connect(function(input)
 end)
 repeat wait(.01)
 	Output.Text = "Fps: " .. workspace:GetRealPhysicsFPS()
-until
+until Fps == nil
