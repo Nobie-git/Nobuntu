@@ -150,9 +150,16 @@ C.TextColor3 = Color3.fromRGB(97, 204, 204)
 C.TextScaled = true
 C.TextSize = 14.000
 C.TextWrapped = true
-
+if game.SoundService:FindFirstChild("NobuntuSound") then
+	return
+else
+	local sound = Instance.new("Sound",game.SoundService)
+	sound.Name = "NobuntuSound"
+end
+local sound = game.SoundService.NobuntuSound
 X.MouseButton1Click:Connect(function()
 	LocalRadio:Destroy()
+	sound:Destroy()
 end)
 C.MouseButton1Click:Connect(function()
 	Main.Visible = not Main.Visible
@@ -190,7 +197,6 @@ UserInputService.InputChanged:Connect(function(input)
 		update(input)
 	end
 end)
-local sound = Instance.new("Sound",game.SoundService)
 Input.FocusLost:Connect(function()
 	sound.SoundId = "http://www.roblox.com/asset/?id=" .. Input.Text	
 end)
@@ -222,6 +228,3 @@ end)
 Speed.FocusLost:Connect(function()
 	sound.PlaybackSpeed = Speed.Text
 end)
-if Top.Parent == nil then
-	sound:Destroy()
-end
