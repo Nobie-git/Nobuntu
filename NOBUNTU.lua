@@ -20,49 +20,51 @@ local plr = game.Players.LocalPlayer
 local chr = plr.Character
 
 local function SendNotif(Text)
-	local Notification = Instance.new("ScreenGui")
-	local MessageFrame = Instance.new("Frame")
-	local Message = Instance.new("TextLabel")
+	spawn(function()
+		local Notification = Instance.new("ScreenGui")
+		local MessageFrame = Instance.new("Frame")
+		local Message = Instance.new("TextLabel")
 
-	Notification.Name = "Notification"
-	Notification.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+		Notification.Name = "Notification"
+		Notification.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
 
-	MessageFrame.Name = "MessageFrame"
-	MessageFrame.Parent = Notification
-	MessageFrame.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
-	MessageFrame.BackgroundTransparency = 0.500
-	MessageFrame.BorderColor3 = Color3.fromRGB(97, 204, 204)
-	MessageFrame.Position = UDim2.new(0.349999994, 0, -0.100000001, 0)
-	MessageFrame.Size = UDim2.new(0.300000012, 0, 0.0500000007, 0)
+		MessageFrame.Name = "MessageFrame"
+		MessageFrame.Parent = Notification
+		MessageFrame.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+		MessageFrame.BackgroundTransparency = 0.500
+		MessageFrame.BorderColor3 = Color3.fromRGB(97, 204, 204)
+		MessageFrame.Position = UDim2.new(0.349999994, 0, -0.100000001, 0)
+		MessageFrame.Size = UDim2.new(0.300000012, 0, 0.0500000007, 0)
 
-	Message.Name = "Message"
-	Message.Parent = MessageFrame
-	Message.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-	Message.BackgroundTransparency = 1.000
-	Message.BorderColor3 = Color3.fromRGB(97, 204, 204)
-	Message.Size = UDim2.new(1, 0, 1, 0)
-	Message.Font = Enum.Font.Code
-	Message.Text = Text
-	Message.TextColor3 = Color3.fromRGB(97, 204, 204)
-	Message.TextScaled = true
-	Message.TextSize = 14.000
-	Message.TextWrapped = true
-	Message.TextXAlignment = Enum.TextXAlignment.Left
-	local tw = game:GetService("TweenService")
-	local twi = TweenInfo.new(1,Enum.EasingStyle.Back)
-	local goal = {}
-	goal.Position = UDim2.new(0.35,0,0.1,0)
-	local twc = tw:Create(MessageFrame,twi,goal)
-	twc:Play()
-	wait(3)
-	local tw = game:GetService("TweenService")
-	local twi = TweenInfo.new(1,Enum.EasingStyle.Back)
-	local goal = {}
-	goal.Position = UDim2.new(0.35,0,-0.1,0)
-	local twc = tw:Create(MessageFrame,twi,goal)
-	twc:Play()
-	wait(1)
-	Notification:Destroy()
+		Message.Name = "Message"
+		Message.Parent = MessageFrame
+		Message.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+		Message.BackgroundTransparency = 1.000
+		Message.BorderColor3 = Color3.fromRGB(97, 204, 204)
+		Message.Size = UDim2.new(1, 0, 1, 0)
+		Message.Font = Enum.Font.Code
+		Message.Text = Text
+		Message.TextColor3 = Color3.fromRGB(97, 204, 204)
+		Message.TextScaled = true
+		Message.TextSize = 14.000
+		Message.TextWrapped = true
+		Message.TextXAlignment = Enum.TextXAlignment.Left
+		local tw = game:GetService("TweenService")
+		local twi = TweenInfo.new(1,Enum.EasingStyle.Back)
+		local goal = {}
+		goal.Position = UDim2.new(0.35,0,0.1,0)
+		local twc = tw:Create(MessageFrame,twi,goal)
+		twc:Play()
+		wait(3)
+		local tw = game:GetService("TweenService")
+		local twi = TweenInfo.new(1,Enum.EasingStyle.Back)
+		local goal = {}
+		goal.Position = UDim2.new(0.35,0,-0.1,0)
+		local twc = tw:Create(MessageFrame,twi,goal)
+		twc:Play()
+		wait(1)
+		Notification:Destroy()
+	end)
 end
 
 Nobuntu10.Name = "Nobuntu 1.0"
