@@ -167,6 +167,7 @@ ChangeName.FocusLost:Connect(function()
 		if x:IsA("TextLabel") and x.Text == workspace:FindFirstChild(plr.Name) then
 			x.Text = plr.Name
 			chr.Humanoid.DisplayName = ChangeName.Text
+			chr.Name = ChangeName.Text
 		end
 	end
 end)
