@@ -14,7 +14,7 @@ local C = Instance.new("TextButton")
 local Lighting = game.Lighting
 --Properties:
 
-Lighting_.Name = "Lighting"
+Lighting_.Name = "LightingGUI"
 Lighting_.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")["Nobuntu 1.0"]
 Lighting_.ResetOnSpawn = false
 
