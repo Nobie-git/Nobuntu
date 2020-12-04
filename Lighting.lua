@@ -44,7 +44,7 @@ Holder.Size = UDim2.new(1, -10, 1, -10)
 UIGridLayout.Parent = Holder
 UIGridLayout.HorizontalAlignment = Enum.HorizontalAlignment.Center
 UIGridLayout.SortOrder = Enum.SortOrder.LayoutOrder
-UIGridLayout.CellSize = UDim2.new(1, 0, 0, 10)
+UIGridLayout.CellSize = UDim2.new(1, 0, 0, 15)
 
 Brightness.Name = "Brightness"
 Brightness.Parent = Holder
