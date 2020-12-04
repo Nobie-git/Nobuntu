@@ -11,6 +11,7 @@ local TextLabel = Instance.new("TextLabel")
 local X = Instance.new("TextButton")
 local C = Instance.new("TextButton")
 local sound = Instance.new("Sound",game.SoundService)
+sound.Name = "NobuntuSound"
 
 LocalRadio.Name = "LocalRadio"
 LocalRadio.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")["Nobuntu 1.0"]
