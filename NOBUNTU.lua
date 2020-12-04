@@ -18,8 +18,6 @@ local C = Instance.new("TextButton")
 local uis = game:GetService("UserInputService")
 local plr = game.Players.LocalPlayer
 local chr = plr.Character
-local Blur = Instance.new("BlurEffect",game.Lighting)
-Blur.Size = 0
 
 uis.InputBegan:Connect(function(input)
 	if input.KeyCode == Enum.KeyCode.RightAlt then
