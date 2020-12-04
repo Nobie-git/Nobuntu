@@ -1,29 +1,27 @@
 local Lighting_ = Instance.new("ScreenGui")
 local Top = Instance.new("Frame")
 local Main = Instance.new("Frame")
-local Holder = Instance.new("Frame")
+local ScrollingFrame = Instance.new("ScrollingFrame")
 local UIGridLayout = Instance.new("UIGridLayout")
 local Brightness = Instance.new("TextBox")
-local System = Instance.new("TextBox")
-local GlobalShadows = Instance.new("TextBox")
-local GlobalShadows_2 = Instance.new("TextBox")
 local ClockTime = Instance.new("TextBox")
+local GlobalShadows = Instance.new("TextBox")
+local FogEnd = Instance.new("TextBox")
 local TextLabel = Instance.new("TextLabel")
 local X = Instance.new("TextButton")
 local C = Instance.new("TextButton")
-local Lighting = game.Lighting
+
 --Properties:
 
-Lighting_.Name = "LightingGUI"
-Lighting_.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")["Nobuntu 1.0"]
-Lighting_.ResetOnSpawn = false
+Lighting_.Name = "Lighting_"
+Lighting_.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
 
 Top.Name = "Top"
 Top.Parent = Lighting_
 Top.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
 Top.BackgroundTransparency = 0.500
 Top.BorderColor3 = Color3.fromRGB(97, 204, 204)
-Top.Position = UDim2.new(0.100000001, 0, 0.7, 0)
+Top.Position = UDim2.new(0.100000001, 0, 0.699999988, 0)
 Top.Size = UDim2.new(0.100000001, 0, 0.0149999997, 0)
 
 Main.Name = "Main"
@@ -34,20 +32,24 @@ Main.BorderColor3 = Color3.fromRGB(97, 204, 204)
 Main.Position = UDim2.new(0, 0, 1, 0)
 Main.Size = UDim2.new(1, 0, 10, 0)
 
-Holder.Name = "Holder"
-Holder.Parent = Main
-Holder.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-Holder.BackgroundTransparency = 1.000
-Holder.Position = UDim2.new(0, 5, 0, 5)
-Holder.Size = UDim2.new(1, -10, 1, -10)
+ScrollingFrame.Parent = Main
+ScrollingFrame.Active = true
+ScrollingFrame.BorderColor3 = Color3.fromRGB(97,204,204)
+ScrollingFrame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+ScrollingFrame.BackgroundTransparency = 1.000
+ScrollingFrame.ScrollBarImageColor3 = Color3.fromRGB(97,204,204)
+ScrollingFrame.Position = UDim2.new(0, 5, 0, 5)
+ScrollingFrame.Size = UDim2.new(1, -10, 1, -10)
+ScrollingFrame.ScrollBarThickness = 8
+ScrollingFrame.ScrollBarImageTransparency = .1
 
-UIGridLayout.Parent = Holder
+UIGridLayout.Parent = ScrollingFrame
 UIGridLayout.HorizontalAlignment = Enum.HorizontalAlignment.Center
 UIGridLayout.SortOrder = Enum.SortOrder.LayoutOrder
 UIGridLayout.CellSize = UDim2.new(1, 0, 0, 15)
 
 Brightness.Name = "Brightness"
-Brightness.Parent = Holder
+Brightness.Parent = ScrollingFrame
 Brightness.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
 Brightness.BackgroundTransparency = 0.500
 Brightness.BorderColor3 = Color3.fromRGB(97, 204, 204)
@@ -60,23 +62,23 @@ Brightness.TextColor3 = Color3.fromRGB(97, 204, 204)
 Brightness.TextSize = 14.000
 Brightness.TextXAlignment = Enum.TextXAlignment.Left
 
-System.Name = "System"
-System.Parent = Holder
-System.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
-System.BackgroundTransparency = 0.500
-System.BorderColor3 = Color3.fromRGB(97, 204, 204)
-System.Size = UDim2.new(0, 200, 0, 50)
-System.Font = Enum.Font.SourceSans
-System.PlaceholderColor3 = Color3.fromRGB(75, 159, 159)
-System.PlaceholderText = "System(Future, etc...)"
-System.Text = ""
-System.TextColor3 = Color3.fromRGB(97, 204, 204)
-System.TextSize = 14.000
-System.TextWrapped = true
-System.TextXAlignment = Enum.TextXAlignment.Left
+ClockTime.Name = "ClockTime"
+ClockTime.Parent = ScrollingFrame
+ClockTime.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+ClockTime.BackgroundTransparency = 0.500
+ClockTime.BorderColor3 = Color3.fromRGB(97, 204, 204)
+ClockTime.Size = UDim2.new(0, 200, 0, 50)
+ClockTime.Font = Enum.Font.SourceSans
+ClockTime.PlaceholderColor3 = Color3.fromRGB(75, 159, 159)
+ClockTime.PlaceholderText = "Clock Time"
+ClockTime.Text = ""
+ClockTime.TextColor3 = Color3.fromRGB(97, 204, 204)
+ClockTime.TextSize = 14.000
+ClockTime.TextWrapped = true
+ClockTime.TextXAlignment = Enum.TextXAlignment.Left
 
 GlobalShadows.Name = "GlobalShadows"
-GlobalShadows.Parent = Holder
+GlobalShadows.Parent = ScrollingFrame
 GlobalShadows.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
 GlobalShadows.BackgroundTransparency = 0.500
 GlobalShadows.BorderColor3 = Color3.fromRGB(97, 204, 204)
@@ -90,35 +92,20 @@ GlobalShadows.TextSize = 14.000
 GlobalShadows.TextWrapped = true
 GlobalShadows.TextXAlignment = Enum.TextXAlignment.Left
 
-GlobalShadows_2.Name = "GlobalShadows"
-GlobalShadows_2.Parent = Holder
-GlobalShadows_2.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
-GlobalShadows_2.BackgroundTransparency = 0.500
-GlobalShadows_2.BorderColor3 = Color3.fromRGB(97, 204, 204)
-GlobalShadows_2.Size = UDim2.new(0, 200, 0, 50)
-GlobalShadows_2.Font = Enum.Font.SourceSans
-GlobalShadows_2.PlaceholderColor3 = Color3.fromRGB(75, 159, 159)
-GlobalShadows_2.PlaceholderText = "Fog End"
-GlobalShadows_2.Text = ""
-GlobalShadows_2.TextColor3 = Color3.fromRGB(97, 204, 204)
-GlobalShadows_2.TextSize = 14.000
-GlobalShadows_2.TextWrapped = true
-GlobalShadows_2.TextXAlignment = Enum.TextXAlignment.Left
-
-ClockTime.Name = "ClockTime"
-ClockTime.Parent = Holder
-ClockTime.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
-ClockTime.BackgroundTransparency = 0.500
-ClockTime.BorderColor3 = Color3.fromRGB(97, 204, 204)
-ClockTime.Size = UDim2.new(0, 200, 0, 50)
-ClockTime.Font = Enum.Font.SourceSans
-ClockTime.PlaceholderColor3 = Color3.fromRGB(75, 159, 159)
-ClockTime.PlaceholderText = "Clock Time"
-ClockTime.Text = ""
-ClockTime.TextColor3 = Color3.fromRGB(97, 204, 204)
-ClockTime.TextSize = 14.000
-ClockTime.TextWrapped = true
-ClockTime.TextXAlignment = Enum.TextXAlignment.Left
+FogEnd.Name = "FogEnd"
+FogEnd.Parent = ScrollingFrame
+FogEnd.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+FogEnd.BackgroundTransparency = 0.500
+FogEnd.BorderColor3 = Color3.fromRGB(97, 204, 204)
+FogEnd.Size = UDim2.new(0, 200, 0, 50)
+FogEnd.Font = Enum.Font.SourceSans
+FogEnd.PlaceholderColor3 = Color3.fromRGB(75, 159, 159)
+FogEnd.PlaceholderText = "Fog End"
+FogEnd.Text = ""
+FogEnd.TextColor3 = Color3.fromRGB(97, 204, 204)
+FogEnd.TextSize = 14.000
+FogEnd.TextWrapped = true
+FogEnd.TextXAlignment = Enum.TextXAlignment.Left
 
 TextLabel.Parent = Top
 TextLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
@@ -164,9 +151,6 @@ C.TextWrapped = true
 X.MouseButton1Click:Connect(function()
 	Lighting_:Destroy()
 end)
-C.MouseButton1Click:Connect(function()
-	Main.Visible = not Main.Visible
-end)
 local UserInputService = game:GetService("UserInputService")
 local gui = Top
 local dragging
@@ -199,16 +183,4 @@ UserInputService.InputChanged:Connect(function(input)
 	if input == dragInput and dragging then
 		update(input)
 	end
-end)
-Brightness.FocusLost:Connect(function()
-	Lighting.Brightness = Brightness.Text
-end)
-GlobalShadows.FocusLost:Connect(function()
-	Lighting.GlobalShadows = GlobalShadows.Text
-end)
-ClockTime.FocusLost:Connect(function()
-	Lighting.ClockTime = ClockTime.Text
-end)
-System.FocusLost:Connect(function()
-	sethiddenproperty(Lighting, "Technology", Voxel)
 end)
