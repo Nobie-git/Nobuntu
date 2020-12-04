@@ -41,6 +41,7 @@ ScrollingFrame.BorderColor3 = Color3.fromRGB(97, 204, 204)
 ScrollingFrame.Position = UDim2.new(0, 5, 0, 5)
 ScrollingFrame.Size = UDim2.new(1, -10, 1, -10)
 ScrollingFrame.ScrollBarThickness = 8
+ScrollingFrame.ScrollBarImageColor3 = Color3.fromRGB(97,204,204)
 
 UIGridLayout.Parent = ScrollingFrame
 UIGridLayout.HorizontalAlignment = Enum.HorizontalAlignment.Center
