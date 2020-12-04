@@ -10,7 +10,7 @@ local Speed = Instance.new("TextBox")
 local TextLabel = Instance.new("TextLabel")
 local X = Instance.new("TextButton")
 local C = Instance.new("TextButton")
-local sound = Instance.new("Sound",LocalRadio)
+local sound = Instance.new("Sound",game.SoundService)
 sound.Name = "NobuntuSound"
 
 LocalRadio.Name = "LocalRadio"
