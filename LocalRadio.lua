@@ -192,7 +192,7 @@ UserInputService.InputChanged:Connect(function(input)
 end)
 local sound = Instance.new("Sound",game.SoundService)
 Input.FocusLost:Connect(function()
-	sound.SoundId = "rbxassetid://" .. Input.Text	
+	sound.SoundId = "http://www.roblox.com/asset/?id=" .. Input.Text	
 end)
 local PlayDB = false
 Play.MouseButton1Click:Connect(function()
