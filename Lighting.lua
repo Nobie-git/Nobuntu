@@ -210,5 +210,5 @@ ClockTime.FocusLost:Connect(function()
 	Lighting.ClockTime = ClockTime.Text
 end)
 System.FocusLost:Connect(function()
-	sethiddenproperty(Lighting, "Technology", System.Text)
+	sethiddenproperty(Lighting, "Technology", Voxel)
 end)
