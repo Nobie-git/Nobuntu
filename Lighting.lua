@@ -5,16 +5,17 @@ local ScrollingFrame = Instance.new("ScrollingFrame")
 local UIGridLayout = Instance.new("UIGridLayout")
 local Brightness = Instance.new("TextBox")
 local ClockTime = Instance.new("TextBox")
-local GlobalShadows = Instance.new("TextBox")
+local Ambient = Instance.new("TextBox")
+local FogColor = Instance.new("TextBox")
 local FogEnd = Instance.new("TextBox")
 local TextLabel = Instance.new("TextLabel")
 local X = Instance.new("TextButton")
 local C = Instance.new("TextButton")
-
---Properties:
+local Lighting = game.Lighting
 
 Lighting_.Name = "Lighting_"
 Lighting_.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")["Nobuntu 1.0"]
+Lighting_.ResetOnSpawn = false
 
 Top.Name = "Top"
 Top.Parent = Lighting_
@@ -34,14 +35,12 @@ Main.Size = UDim2.new(1, 0, 10, 0)
 
 ScrollingFrame.Parent = Main
 ScrollingFrame.Active = true
-ScrollingFrame.BorderColor3 = Color3.fromRGB(97,204,204)
 ScrollingFrame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 ScrollingFrame.BackgroundTransparency = 1.000
-ScrollingFrame.ScrollBarImageColor3 = Color3.fromRGB(97,204,204)
+ScrollingFrame.BorderColor3 = Color3.fromRGB(97, 204, 204)
 ScrollingFrame.Position = UDim2.new(0, 5, 0, 5)
 ScrollingFrame.Size = UDim2.new(1, -10, 1, -10)
 ScrollingFrame.ScrollBarThickness = 8
-ScrollingFrame.ScrollBarImageTransparency = .1
 
 UIGridLayout.Parent = ScrollingFrame
 UIGridLayout.HorizontalAlignment = Enum.HorizontalAlignment.Center
@@ -77,20 +76,35 @@ ClockTime.TextSize = 14.000
 ClockTime.TextWrapped = true
 ClockTime.TextXAlignment = Enum.TextXAlignment.Left
 
-GlobalShadows.Name = "GlobalShadows"
-GlobalShadows.Parent = ScrollingFrame
-GlobalShadows.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
-GlobalShadows.BackgroundTransparency = 0.500
-GlobalShadows.BorderColor3 = Color3.fromRGB(97, 204, 204)
-GlobalShadows.Size = UDim2.new(0, 200, 0, 50)
-GlobalShadows.Font = Enum.Font.SourceSans
-GlobalShadows.PlaceholderColor3 = Color3.fromRGB(75, 159, 159)
-GlobalShadows.PlaceholderText = "Global Shadows"
-GlobalShadows.Text = ""
-GlobalShadows.TextColor3 = Color3.fromRGB(97, 204, 204)
-GlobalShadows.TextSize = 14.000
-GlobalShadows.TextWrapped = true
-GlobalShadows.TextXAlignment = Enum.TextXAlignment.Left
+Ambient.Name = "Ambient"
+Ambient.Parent = ScrollingFrame
+Ambient.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+Ambient.BackgroundTransparency = 0.500
+Ambient.BorderColor3 = Color3.fromRGB(97, 204, 204)
+Ambient.Size = UDim2.new(0, 200, 0, 50)
+Ambient.Font = Enum.Font.SourceSans
+Ambient.PlaceholderColor3 = Color3.fromRGB(75, 159, 159)
+Ambient.PlaceholderText = "Ambient"
+Ambient.Text = ""
+Ambient.TextColor3 = Color3.fromRGB(97, 204, 204)
+Ambient.TextSize = 14.000
+Ambient.TextWrapped = true
+Ambient.TextXAlignment = Enum.TextXAlignment.Left
+
+FogColor.Name = "FogColor"
+FogColor.Parent = ScrollingFrame
+FogColor.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+FogColor.BackgroundTransparency = 0.500
+FogColor.BorderColor3 = Color3.fromRGB(97, 204, 204)
+FogColor.Size = UDim2.new(0, 200, 0, 50)
+FogColor.Font = Enum.Font.SourceSans
+FogColor.PlaceholderColor3 = Color3.fromRGB(75, 159, 159)
+FogColor.PlaceholderText = "Fog Color"
+FogColor.Text = ""
+FogColor.TextColor3 = Color3.fromRGB(97, 204, 204)
+FogColor.TextSize = 14.000
+FogColor.TextWrapped = true
+FogColor.TextXAlignment = Enum.TextXAlignment.Left
 
 FogEnd.Name = "FogEnd"
 FogEnd.Parent = ScrollingFrame
@@ -151,6 +165,9 @@ C.TextWrapped = true
 X.MouseButton1Click:Connect(function()
 	Lighting_:Destroy()
 end)
+C.MounseButton1Down:Connect(function()
+	Main.Visible = not Main.Visible
+end)
 local UserInputService = game:GetService("UserInputService")
 local gui = Top
 local dragging
@@ -183,4 +200,19 @@ UserInputService.InputChanged:Connect(function(input)
 	if input == dragInput and dragging then
 		update(input)
 	end
+end)
+Brightness.FocusLost:Connect(function()
+	Lighting.Brightness = Brightness.Text
+end)
+ClockTime.FocusLost:Connect(function()
+	Lighting.ClockTime = ClockTime.Text
+end)
+FogColor.FocusLost:Connect(function()
+	Lighting.FogColor = Color3.fromRGB(FogColor.Text)
+end)
+FogEnd.FocusLost:Connect(function()
+	Lighting.FogEnd = FogEnd.Text
+end)
+Ambient.FocusLost:Connect(function()
+	Lighting.Ambient = Color3.fromRGB(Ambient.Text)
 end)
