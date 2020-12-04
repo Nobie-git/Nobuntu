@@ -25,15 +25,6 @@ uis.InputBegan:Connect(function(input)
 	if input.KeyCode == Enum.KeyCode.RightAlt then
 		Nobuntu10.Enabled = not Nobuntu10.Enabled
 	end
-	if Nobuntu10.Enabled == true then
-		repeat wait(.1)
-			Blur.Size = Blur.Size + .1
-		until Blur.Size == 20
-	elseif Nobuntu10.Enabled == false then
-		repeat wait(.1)
-			Blur.Size = Blur.Size - .1
-		until Blur.Size == 0
-	end
 end)
 
 local function SendNotif(Text)
