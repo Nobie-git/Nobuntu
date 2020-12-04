@@ -312,7 +312,7 @@ LocalRadio.MouseButton1Click:Connect(function()
     SendNotif("LocalRadio Module Loaded!")
 end)
 ServerInfo.MouseButton1Click:Connect(function()
-	print"Nobuntu: LocalHider Module Loaded!"
+	SendNotif"Nobuntu: LocalHider Module Loaded!"
 	loadstring(game:HttpGet('https://raw.githubusercontent.com/Nobie-git/Nobuntu/main/ServerInfo.lua'))()
 end)
 Reset.MouseButton1Click:Connect(function()
