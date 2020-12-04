@@ -25,6 +25,7 @@ uis.InputBegan:Connect(function(input)
 end)
 
 local function SendNotif(Text)
+	local function x()
 	local Notification = Instance.new("ScreenGui")
 	local MessageFrame = Instance.new("Frame")
 	local Message = Instance.new("TextLabel")
@@ -68,6 +69,8 @@ local function SendNotif(Text)
 	twc:Play()
 	wait(1)
 	Notification:Destroy()
+	end
+spawn(x)
 end
 
 Nobuntu10.Name = "Nobuntu 1.0"
