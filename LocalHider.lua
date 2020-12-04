@@ -4,7 +4,7 @@ local Main = Instance.new("Frame")
 local Holder = Instance.new("Frame")
 local ClearAvatar = Instance.new("TextButton")
 local UIGridLayout = Instance.new("UIGridLayout")
-local GlobalShadows = Instance.new("TextBox")
+local ChangeName = Instance.new("TextBox")
 local TextLabel = Instance.new("TextLabel")
 local X = Instance.new("TextButton")
 local C = Instance.new("TextButton")
@@ -12,7 +12,7 @@ local plr = game.Players.LocalPlayer
 local chr = plr.Character
 
 LocalHider.Name = "LocalHider"
-LocalHider.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")["Nobuntu 1.0"]
+LocalHider.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
 LocalHider.ResetOnSpawn = false
 
 Top.Name = "Top"
@@ -56,20 +56,20 @@ UIGridLayout.HorizontalAlignment = Enum.HorizontalAlignment.Center
 UIGridLayout.SortOrder = Enum.SortOrder.LayoutOrder
 UIGridLayout.CellSize = UDim2.new(1, 0, 0, 15)
 
-GlobalShadows.Name = "GlobalShadows"
-GlobalShadows.Parent = Holder
-GlobalShadows.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
-GlobalShadows.BackgroundTransparency = 0.500
-GlobalShadows.BorderColor3 = Color3.fromRGB(97, 204, 204)
-GlobalShadows.Size = UDim2.new(0, 200, 0, 50)
-GlobalShadows.Font = Enum.Font.SourceSans
-GlobalShadows.PlaceholderColor3 = Color3.fromRGB(75, 159, 159)
-GlobalShadows.PlaceholderText = "Change username"
-GlobalShadows.Text = ""
-GlobalShadows.TextColor3 = Color3.fromRGB(97, 204, 204)
-GlobalShadows.TextSize = 14.000
-GlobalShadows.TextWrapped = true
-GlobalShadows.TextXAlignment = Enum.TextXAlignment.Left
+ChangeName.Name = "ChangeName"
+ChangeName.Parent = Holder
+ChangeName.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+ChangeName.BackgroundTransparency = 0.500
+ChangeName.BorderColor3 = Color3.fromRGB(97, 204, 204)
+ChangeName.Size = UDim2.new(0, 200, 0, 50)
+ChangeName.Font = Enum.Font.SourceSans
+ChangeName.PlaceholderColor3 = Color3.fromRGB(75, 159, 159)
+ChangeName.PlaceholderText = "Change username"
+ChangeName.Text = ""
+ChangeName.TextColor3 = Color3.fromRGB(97, 204, 204)
+ChangeName.TextSize = 14.000
+ChangeName.TextWrapped = true
+ChangeName.TextXAlignment = Enum.TextXAlignment.Left
 
 TextLabel.Parent = Top
 TextLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
@@ -159,4 +159,7 @@ ClearAvatar.MouseButton1Click:Connect(function()
 			x.Color = Color3.fromRGB(0,0,0)
 		end
 	end
+end)
+ChangeName.FocusLost:Connect(function()
+	plr.Name = ChangeName.Text
 end)
