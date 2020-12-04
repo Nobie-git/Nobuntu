@@ -10,7 +10,7 @@ local Speed = Instance.new("TextBox")
 local TextLabel = Instance.new("TextLabel")
 local X = Instance.new("TextButton")
 local C = Instance.new("TextButton")
-local sound = Instance.new("Sound",game.SoundService)
+local sound = Instance.new("Sound",LocalRadio)
 sound.Name = "NobuntuSound"
 
 LocalRadio.Name = "LocalRadio"
@@ -152,10 +152,10 @@ C.TextColor3 = Color3.fromRGB(97, 204, 204)
 C.TextScaled = true
 C.TextSize = 14.000
 C.TextWrapped = true
-if game.SoundService:FindFirstChild("NobuntuSound") then
-	sound:Destroy()
-elseif not game.SoundService:FindFirstChild("NobuntuSound") then
-	local sound = Instance.new("Sound",game.SoundService)
+if LocalRadio:FindFirstChild("NobuntuSound") then
+	return
+else
+	local sound = Instance.new("Sound",LocalRadio)
 	sound.Name = "NobuntuSound"
 end
 X.MouseButton1Click:Connect(function()
