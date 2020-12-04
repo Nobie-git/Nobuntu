@@ -180,7 +180,7 @@ UserInputService.InputChanged:Connect(function(input)
 	end
 end)
 
-GameName.Text = "Name: " .. game.Name
+GameName.Text = "Name: " .. workspace.Parent.Name
 MaxPlayers.Text = "MaxPlayers: " .. game.Players.MaxPlayers
 repeat wait(.5) do
 		Uptime.Text = "Uptime: " .. workspace.DistributedGameTime
