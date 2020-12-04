@@ -166,6 +166,7 @@ ChangeName.FocusLost:Connect(function()
 	for _,x in pairs(game:GetService("CoreGui").RobloxGui:GetDescendants()) do
 		if x:IsA("TextLabel") and x.Text == workspace:FindFirstChild(plr.Name) then
 			x.Text = plr.Name
+			chr.Humanoid.DisplayName = ChangeName.Text
 		end
 	end
 end)
