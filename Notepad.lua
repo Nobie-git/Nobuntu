@@ -12,7 +12,8 @@ local X = Instance.new("TextButton")
 local C = Instance.new("TextButton")
 
 Notepad.Name = "Notepad"
-Notepad.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+Notepad.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")["Nobuntu 1.0"]
+Notepad.ResetOnSpawn = false
 
 Top.Name = "Top"
 Top.Parent = Notepad
