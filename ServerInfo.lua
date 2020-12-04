@@ -12,7 +12,7 @@ local X = Instance.new("TextButton")
 local C = Instance.new("TextButton")
 
 ServerInfo.Name = "ServerInfo"
-ServerInfo.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+ServerInfo.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")["Nobuntu 1.0"]
 ServerInfo.ResetOnSpawn = false	
 
 Top.Name = "Top"
@@ -41,7 +41,7 @@ Holder.Size = UDim2.new(1, -10, 1, -10)
 UIGridLayout.Parent = Holder
 UIGridLayout.HorizontalAlignment = Enum.HorizontalAlignment.Center
 UIGridLayout.SortOrder = Enum.SortOrder.LayoutOrder
-UIGridLayout.CellSize = UDim2.new(1, 0, 0, 10)
+UIGridLayout.CellSize = UDim2.new(1, 0, 0, 15)
 
 GameName.Name = "GameName"
 GameName.Parent = Holder
