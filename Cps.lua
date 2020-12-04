@@ -6,7 +6,7 @@ local plr = game.Players.LocalPlayer
 local mouse = plr:GetMouse()
 
 Cps.Name = "Cps"
-Cps.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+Cps.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")["Nobuntu 1.0"]
 Cps.ResetOnSpawn = false
 
 Top.Name = "Top"
