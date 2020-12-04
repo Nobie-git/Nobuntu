@@ -6,7 +6,7 @@ local UIGridLayout = Instance.new("UIGridLayout")
 local Brightness = Instance.new("TextBox")
 local ClockTime = Instance.new("TextBox")
 local Ambient = Instance.new("TextBox")
-local FogColor = Instance.new("TextBox")
+local FogStart = Instance.new("TextBox")
 local FogEnd = Instance.new("TextBox")
 local TextLabel = Instance.new("TextLabel")
 local X = Instance.new("TextButton")
@@ -92,20 +92,20 @@ Ambient.TextSize = 14.000
 Ambient.TextWrapped = true
 Ambient.TextXAlignment = Enum.TextXAlignment.Left
 
-FogColor.Name = "FogColor"
-FogColor.Parent = ScrollingFrame
-FogColor.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
-FogColor.BackgroundTransparency = 0.500
-FogColor.BorderColor3 = Color3.fromRGB(97, 204, 204)
-FogColor.Size = UDim2.new(0, 200, 0, 50)
-FogColor.Font = Enum.Font.SourceSans
-FogColor.PlaceholderColor3 = Color3.fromRGB(75, 159, 159)
-FogColor.PlaceholderText = "Fog Color"
-FogColor.Text = ""
-FogColor.TextColor3 = Color3.fromRGB(97, 204, 204)
-FogColor.TextSize = 14.000
-FogColor.TextWrapped = true
-FogColor.TextXAlignment = Enum.TextXAlignment.Left
+FogStart.Name = "FogStart"
+FogStart.Parent = ScrollingFrame
+FogStart.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+FogStart.BackgroundTransparency = 0.500
+FogStart.BorderColor3 = Color3.fromRGB(97, 204, 204)
+FogStart.Size = UDim2.new(0, 200, 0, 50)
+FogStart.Font = Enum.Font.SourceSans
+FogStart.PlaceholderColor3 = Color3.fromRGB(75, 159, 159)
+FogStart.PlaceholderText = "Fog Start"
+FogStart.Text = ""
+FogStart.TextColor3 = Color3.fromRGB(97, 204, 204)
+FogStart.TextSize = 14.000
+FogStart.TextWrapped = true
+FogStart.TextXAlignment = Enum.TextXAlignment.Left
 
 FogEnd.Name = "FogEnd"
 FogEnd.Parent = ScrollingFrame
@@ -208,8 +208,8 @@ end)
 ClockTime.FocusLost:Connect(function()
 	Lighting.ClockTime = ClockTime.Text
 end)
-FogColor.FocusLost:Connect(function()
-	Lighting.FogColor = Color3.fromRGB(FogColor.Text)
+FogStart.FocusLost:Connect(function()
+	Lighting.FogStart = FogStart.Text
 end)
 FogEnd.FocusLost:Connect(function()
 	Lighting.FogEnd = FogEnd.Text
