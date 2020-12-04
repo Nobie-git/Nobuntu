@@ -19,7 +19,7 @@ Lighting_.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")["Nobuntu 1
 Lighting.ResetOnSpawn = false
 
 Top.Name = "Top"
-Top.Parent = Lighting
+Top.Parent = Lighting_
 Top.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
 Top.BackgroundTransparency = 0.500
 Top.BorderColor3 = Color3.fromRGB(97, 204, 204)
