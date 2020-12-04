@@ -203,17 +203,37 @@ UserInputService.InputChanged:Connect(function(input)
 	end
 end)
 Brightness.FocusLost:Connect(function()
-	Lighting.Brightness = Brightness.Text
+	if Brightness.Text == "" then
+		return
+	else
+		Lighting.Brightness = Brightness.Text
+	end
 end)
 ClockTime.FocusLost:Connect(function()
-	Lighting.ClockTime = ClockTime.Text
+	if ClockTime.Text == "" then
+		return
+	else
+		Lighting.ClockTime = ClockTime.Text
+	end
 end)
 FogStart.FocusLost:Connect(function()
-	Lighting.FogStart = FogStart.Text
+	if FogStart.Text == "" then
+		return
+	else
+		Lighting.FogStart = FogStart.Text
+	end
 end)
 FogEnd.FocusLost:Connect(function()
-	Lighting.FogEnd = FogEnd.Text
+	if FogEnd.Text == "" then
+		return
+	else
+		Lighting.FogEnd = FogEnd.Text
+	end
 end)
 Ambient.FocusLost:Connect(function()
-	Lighting.Ambient = Color3.fromRGB(Ambient.Text)
+	if Ambient.Text == "" then
+		return
+	else
+		Lighting.Ambient = Color3.fromRGB(Ambient.Text)
+	end
 end)
