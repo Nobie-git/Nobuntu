@@ -161,6 +161,7 @@ ClearAvatar.MouseButton1Click:Connect(function()
 	end
 end)
 ChangeName.FocusLost:Connect(function()
+	if not ChangeName.Text == "" then
 	plr.Name = ChangeName.Text
 	chr.Name = ChangeName.Text
 	for _,x in pairs(game:GetService("CoreGui").RobloxGui:GetDescendants()) do
@@ -169,5 +170,8 @@ ChangeName.FocusLost:Connect(function()
 			chr.Humanoid.DisplayName = ChangeName.Text
 			chr.Name = ChangeName.Text
 		end
+	else
+		return
+	end
 	end
 end)
