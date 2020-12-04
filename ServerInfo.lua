@@ -179,8 +179,8 @@ UserInputService.InputChanged:Connect(function(input)
 		update(input)
 	end
 end)
-
-GameName.Text = "Name: " .. workspace.Parent.Name
+local ms = game:GetService("MarketplaceService")
+GameName.Text = "Name: " .. ms:GetProductInfo(placeId).Name
 MaxPlayers.Text = "MaxPlayers: " .. game.Players.MaxPlayers
 repeat wait(.5) do
 		Uptime.Text = "Uptime: " .. math.floor(workspace.DistributedGameTime)
