@@ -153,6 +153,7 @@ C.TextWrapped = true
 if not game.SoundService.NobuntuSound then
 	local sound = Instance.new("Sound",game.SoundService)
 	sound.Name = "NobuntuSound"
+else return
 end
 local sound = game.SoundService.NobuntuSound
 X.MouseButton1Click:Connect(function()
