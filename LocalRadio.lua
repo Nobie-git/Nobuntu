@@ -209,10 +209,10 @@ local LoopDB = false
 Loop.MouseButton1Click:Connect(function()
 	PlayDB = not PlayDB
 	if PlayDB == false then
-		Play.Text = "Loop"
+		Loop.Text = "Loop"
 		sound.Looped = false
 	elseif PlayDB == true then
-		Play.Text = "Stop Looping"
+		Loop.Text = "Stop Looping"
 		sound.Looped = true
 	end
 end)
