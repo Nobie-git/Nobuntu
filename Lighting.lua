@@ -14,7 +14,7 @@ local C = Instance.new("TextButton")
 --Properties:
 
 Lighting_.Name = "Lighting_"
-Lighting_.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+Lighting_.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")["Nobuntu 1.0"]
 
 Top.Name = "Top"
 Top.Parent = Lighting_
