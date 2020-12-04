@@ -155,7 +155,7 @@ C.TextWrapped = true
 if not LocalRadio:FindFirstChild("NobuntuSound") then
 	local sound = Instance.new("Sound",LocalRadio)
 	sound.Name = "NobuntuSound"
-else
+elseif LocalRadio:FindFirstChild("NobuntuSound") then
 	return
 end
 X.MouseButton1Click:Connect(function()
