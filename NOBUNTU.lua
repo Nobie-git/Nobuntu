@@ -11,6 +11,7 @@ local LocalRadio = Instance.new("TextButton")
 local Reset = Instance.new("TextButton")
 local ServerInfo = Instance.new("TextButton")
 local Cps = Instance.new("TextButton")
+local Notepad = Instance.new("TextButton")
 local TextLabel = Instance.new("TextLabel")
 local X = Instance.new("TextButton")
 local C = Instance.new("TextButton")
@@ -18,58 +19,50 @@ local uis = game:GetService("UserInputService")
 local plr = game.Players.LocalPlayer
 local chr = plr.Character
 
-uis.InputBegan:Connect(function(input)
-	if input.KeyCode == Enum.KeyCode.RightAlt then
-		Nobuntu10.Enabled = not Nobuntu10.Enabled
-	end
-end)
-
 local function SendNotif(Text)
-	spawn(function()
-		local Notification = Instance.new("ScreenGui")
-		local MessageFrame = Instance.new("Frame")
-		local Message = Instance.new("TextLabel")
+	local Notification = Instance.new("ScreenGui")
+	local MessageFrame = Instance.new("Frame")
+	local Message = Instance.new("TextLabel")
 
-		Notification.Name = "Notification"
-		Notification.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+	Notification.Name = "Notification"
+	Notification.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
 
-		MessageFrame.Name = "MessageFrame"
-		MessageFrame.Parent = Notification
-		MessageFrame.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
-		MessageFrame.BackgroundTransparency = 0.500
-		MessageFrame.BorderColor3 = Color3.fromRGB(97, 204, 204)
-		MessageFrame.Position = UDim2.new(0.349999994, 0, -0.100000001, 0)
-		MessageFrame.Size = UDim2.new(0.300000012, 0, 0.0500000007, 0)
+	MessageFrame.Name = "MessageFrame"
+	MessageFrame.Parent = Notification
+	MessageFrame.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+	MessageFrame.BackgroundTransparency = 0.500
+	MessageFrame.BorderColor3 = Color3.fromRGB(97, 204, 204)
+	MessageFrame.Position = UDim2.new(0.349999994, 0, -0.100000001, 0)
+	MessageFrame.Size = UDim2.new(0.300000012, 0, 0.0500000007, 0)
 
-		Message.Name = "Message"
-		Message.Parent = MessageFrame
-		Message.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-		Message.BackgroundTransparency = 1.000
-		Message.BorderColor3 = Color3.fromRGB(97, 204, 204)
-		Message.Size = UDim2.new(1, 0, 1, 0)
-		Message.Font = Enum.Font.Code
-		Message.Text = Text
-		Message.TextColor3 = Color3.fromRGB(97, 204, 204)
-		Message.TextScaled = true
-		Message.TextSize = 14.000
-		Message.TextWrapped = true
-		Message.TextXAlignment = Enum.TextXAlignment.Left
-		local tw = game:GetService("TweenService")
-		local twi = TweenInfo.new(1,Enum.EasingStyle.Back)
-		local goal = {}
-		goal.Position = UDim2.new(0.35,0,0.1,0)
-		local twc = tw:Create(MessageFrame,twi,goal)
-		twc:Play()
-		wait(3)
-		local tw = game:GetService("TweenService")
-		local twi = TweenInfo.new(1,Enum.EasingStyle.Back)
-		local goal = {}
-		goal.Position = UDim2.new(0.35,0,-0.1,0)
-		local twc = tw:Create(MessageFrame,twi,goal)
-		twc:Play()
-		wait(1)
-		Notification:Destroy()
-	end)
+	Message.Name = "Message"
+	Message.Parent = MessageFrame
+	Message.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	Message.BackgroundTransparency = 1.000
+	Message.BorderColor3 = Color3.fromRGB(97, 204, 204)
+	Message.Size = UDim2.new(1, 0, 1, 0)
+	Message.Font = Enum.Font.Code
+	Message.Text = Text
+	Message.TextColor3 = Color3.fromRGB(97, 204, 204)
+	Message.TextScaled = true
+	Message.TextSize = 14.000
+	Message.TextWrapped = true
+	Message.TextXAlignment = Enum.TextXAlignment.Left
+	local tw = game:GetService("TweenService")
+	local twi = TweenInfo.new(1,Enum.EasingStyle.Back)
+	local goal = {}
+	goal.Position = UDim2.new(0.35,0,0.1,0)
+	local twc = tw:Create(MessageFrame,twi,goal)
+	twc:Play()
+	wait(3)
+	local tw = game:GetService("TweenService")
+	local twi = TweenInfo.new(1,Enum.EasingStyle.Back)
+	local goal = {}
+	goal.Position = UDim2.new(0.35,0,-0.1,0)
+	local twc = tw:Create(MessageFrame,twi,goal)
+	twc:Play()
+	wait(1)
+	Notification:Destroy()
 end
 
 Nobuntu10.Name = "Nobuntu 1.0"
@@ -81,7 +74,7 @@ Top.Parent = Nobuntu10
 Top.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
 Top.BackgroundTransparency = 0.500
 Top.BorderColor3 = Color3.fromRGB(97, 204, 204)
-Top.Position = UDim2.new(0.1,0,0.532, 0)
+Top.Position = UDim2.new(0.100000001, 0, 0.529999971, 0)
 Top.Size = UDim2.new(0.129999995, 0, 0.0149999997, 0)
 
 Main.Name = "Main"
@@ -209,6 +202,19 @@ Cps.TextScaled = true
 Cps.TextSize = 14.000
 Cps.TextWrapped = true
 
+Notepad.Name = "Notepad"
+Notepad.Parent = Holder
+Notepad.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+Notepad.BackgroundTransparency = 0.500
+Notepad.BorderColor3 = Color3.fromRGB(97, 204, 204)
+Notepad.Size = UDim2.new(0, 200, 0, 50)
+Notepad.Font = Enum.Font.Code
+Notepad.Text = "Notepad"
+Notepad.TextColor3 = Color3.fromRGB(97, 204, 204)
+Notepad.TextScaled = true
+Notepad.TextSize = 14.000
+Notepad.TextWrapped = true
+
 TextLabel.Parent = Top
 TextLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 TextLabel.BackgroundTransparency = 1.000
@@ -294,12 +300,12 @@ Key_Log.MouseButton1Click:Connect(function()
 	SendNotif("Key_Log Module Loaded!")
 end)
 Fps.MouseButton1Click:Connect(function()
-    SendNotif("Fps Module Loaded!")
 	loadstring(game:HttpGet('https://raw.githubusercontent.com/Nobie-git/Nobuntu/main/Fps.lua'))()
+	SendNotif("Fps Module Loaded!")
 end)
 Cps.MouseButton1Click:Connect(function()
-    SendNotif("Cps Module Loaded!")
 	loadstring(game:HttpGet('https://raw.githubusercontent.com/Nobie-git/Nobuntu/main/Cps.lua'))()
+	SendNotif("Cps Module Loaded!")
 end)
 Lighting.MouseButton1Click:Connect(function()
 	loadstring(game:HttpGet('https://raw.githubusercontent.com/Nobie-git/Nobuntu/main/Lighting.lua'))()
@@ -310,13 +316,18 @@ LocalHider.MouseButton1Click:Connect(function()
 	SendNotif("LocalHider Module Loaded!")
 end)
 LocalRadio.MouseButton1Click:Connect(function()
-    loadstring(game:HttpGet('https://raw.githubusercontent.com/Nobie-git/Nobuntu/main/LocalRadio.lua'))()
-    SendNotif("LocalRadio Module Loaded!")
+	loadstring(game:HttpGet('https://raw.githubusercontent.com/Nobie-git/Nobuntu/main/LocalRadio.lua'))()
+	SendNotif("LocalRadio Module Loaded!")
 end)
 ServerInfo.MouseButton1Click:Connect(function()
-	SendNotif"Nobuntu: LocalHider Module Loaded!"
 	loadstring(game:HttpGet('https://raw.githubusercontent.com/Nobie-git/Nobuntu/main/ServerInfo.lua'))()
+	SendNotif("ServerInfo Module Loaded!")
 end)
+Notepad.MouseButton1Click:Connect(function()
+	loadstring(game:HttpGet('https://raw.githubusercontent.com/Nobie-git/Nobuntu/main/Notepad.lua'))()
+	SendNotif("Notepad Module Loaded!")
+end)
+
 Reset.MouseButton1Click:Connect(function()
 	chr.Humanoid.Health = nil
 end)
