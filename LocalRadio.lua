@@ -150,7 +150,7 @@ C.TextColor3 = Color3.fromRGB(97, 204, 204)
 C.TextScaled = true
 C.TextSize = 14.000
 C.TextWrapped = true
-if not game.SoundService.NobuntuSound then
+if not game.SoundService:FindFirstChild("NobuntuSound ") then
 	local sound = Instance.new("Sound",game.SoundService)
 	sound.Name = "NobuntuSound"
 else return
