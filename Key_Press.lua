@@ -21,7 +21,7 @@ local uis = game:GetService("UserInputService")
 local plr = game.Players.LocalPlayer
 local mouse = plr:GetMouse()
 Key_Log.Name = "Key_Log"
-Key_Log.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+Key_Log.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")["Nobuntu 1.0"]
 Key_Log.ResetOnSpawn = false
 
 Top.Name = "Top"
