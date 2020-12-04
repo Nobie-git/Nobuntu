@@ -26,11 +26,11 @@ uis.InputBegan:Connect(function(input)
 		Nobuntu10.Enabled = not Nobuntu10.Enabled
 	end
 	if Nobuntu10.Enabled == true then
-		repeat wait(.01) 
+		repeat wait(.1)
 			Blur.Size = Blur.Size + .1
-		until Blur.Size == 15
+		until Blur.Size == 20
 	elseif Nobuntu10.Enabled == false then
-		repeat wait(.01) 
+		repeat wait(.1)
 			Blur.Size = Blur.Size - .1
 		until Blur.Size == 0
 	end
