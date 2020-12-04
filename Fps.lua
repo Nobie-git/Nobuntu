@@ -5,7 +5,7 @@ local X = Instance.new("TextButton")
 local C = Instance.new("TextButton")
 
 Fps.Name = "Fps"
-Fps.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+Fps.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")["Nobuntu 1.0"]
 Fps.ResetOnSpawn = false
 
 Top.Name = "Top"
