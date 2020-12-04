@@ -154,8 +154,6 @@ C.TextSize = 14.000
 C.TextWrapped = true
 if game.SoundService:FindFirstChild("NobuntuSound") then
 	sound:Destroy()
-	local sound = Instance.new("Sound",game.SoundService)
-	sound.Name = "NobuntuSound"
 elseif not game.SoundService:FindFirstChild("NobuntuSound") then
 	local sound = Instance.new("Sound",game.SoundService)
 	sound.Name = "NobuntuSound"
