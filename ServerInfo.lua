@@ -183,7 +183,7 @@ end)
 GameName.Text = "Name: " .. workspace.Parent.Name
 MaxPlayers.Text = "MaxPlayers: " .. game.Players.MaxPlayers
 repeat wait(.5) do
-		Uptime.Text = "Uptime: " .. workspace.DistributedGameTime
+		Uptime.Text = "Uptime: " .. math.floor(workspace.DistributedGameTime)
 		Players.Text = "Players: " .. #game.Players:GetChildren()
 	end
 until Top.Parent == nil
