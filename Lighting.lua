@@ -165,7 +165,7 @@ C.TextWrapped = true
 X.MouseButton1Click:Connect(function()
 	Lighting_:Destroy()
 end)
-C.MounseButton1Down:Connect(function()
+C.MouseButton1Click:Connect(function()
 	Main.Visible = not Main.Visible
 end)
 local UserInputService = game:GetService("UserInputService")
