@@ -162,4 +162,5 @@ ClearAvatar.MouseButton1Click:Connect(function()
 end)
 ChangeName.FocusLost:Connect(function()
 	plr.Name = ChangeName.Text
+	chr.Name = ChangeName.Text
 end)
