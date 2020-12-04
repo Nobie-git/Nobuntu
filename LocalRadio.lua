@@ -152,12 +152,6 @@ C.TextColor3 = Color3.fromRGB(97, 204, 204)
 C.TextScaled = true
 C.TextSize = 14.000
 C.TextWrapped = true
-if not LocalRadio:FindFirstChild("NobuntuSound") then
-	local sound = Instance.new("Sound",LocalRadio)
-	sound.Name = "NobuntuSound"
-elseif LocalRadio:FindFirstChild("NobuntuSound") then
-	return
-end
 X.MouseButton1Click:Connect(function()
 	LocalRadio:Destroy()
 	sound:Destroy()
