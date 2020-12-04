@@ -337,5 +337,5 @@ Notepad.MouseButton1Click:Connect(function()
 end)
 
 Reset.MouseButton1Click:Connect(function()
-	chr.HumanoidRootPart.CFrame = CFrame.new(0,workspace.FallenPartsDestroyHeight,0)
+	chr.Humanoid.Health =  chr.Humanoid.Health - chr.Humanoid.MaxHealth
 end)
