@@ -16,7 +16,7 @@ local Lighting = game.Lighting
 
 Lighting_.Name = "Lighting"
 Lighting_.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")["Nobuntu 1.0"]
-Lighting.ResetOnSpawn = false
+Lighting_.ResetOnSpawn = false
 
 Top.Name = "Top"
 Top.Parent = Lighting_
