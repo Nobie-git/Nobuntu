@@ -12,7 +12,7 @@ local plr = game.Players.LocalPlayer
 local chr = plr.Character
 
 LocalHider.Name = "LocalHider"
-LocalHider.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+LocalHider.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")["Nobuntu 1.0"]
 LocalHider.ResetOnSpawn = false
 
 Top.Name = "Top"
