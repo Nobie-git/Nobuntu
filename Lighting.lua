@@ -1,4 +1,4 @@
-local Lighting = Instance.new("ScreenGui")
+local Lighting_ = Instance.new("ScreenGui")
 local Top = Instance.new("Frame")
 local Main = Instance.new("Frame")
 local Holder = Instance.new("Frame")
@@ -14,8 +14,8 @@ local C = Instance.new("TextButton")
 local Lighting = game.Lighting
 --Properties:
 
-Lighting.Name = "LightingGUI"
-Lighting.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")["Nobuntu 1.0"]
+Lighting_.Name = "Lighting"
+Lighting_.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")["Nobuntu 1.0"]
 
 Top.Name = "Top"
 Top.Parent = Lighting
@@ -161,7 +161,7 @@ C.TextSize = 14.000
 C.TextWrapped = true
 
 X.MouseButton1Click:Connect(function()
-	Lighting:Destroy()
+	Lighting_:Destroy()
 end)
 C.MouseButton1Click:Connect(function()
 	Main.Visible = not Main.Visible
