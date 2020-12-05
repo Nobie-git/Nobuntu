@@ -12,6 +12,7 @@ local Reset = Instance.new("TextButton")
 local ServerInfo = Instance.new("TextButton")
 local Cps = Instance.new("TextButton")
 local Notepad = Instance.new("TextButton")
+local MouseChanger = Instance.new("TextButton")
 local TextLabel = Instance.new("TextLabel")
 local X = Instance.new("TextButton")
 local C = Instance.new("TextButton")
@@ -104,7 +105,7 @@ UIGridLayout.Parent = Holder
 UIGridLayout.HorizontalAlignment = Enum.HorizontalAlignment.Center
 UIGridLayout.SortOrder = Enum.SortOrder.LayoutOrder
 UIGridLayout.VerticalAlignment = Enum.VerticalAlignment.Center
-UIGridLayout.CellSize = UDim2.new(0, 50, 0, 25)
+UIGridLayout.CellSize = UDim2.new(0, 55, 0, 20)
 
 Key_Log.Name = "Key_Log"
 Key_Log.Parent = Holder
@@ -222,6 +223,19 @@ Notepad.TextColor3 = Color3.fromRGB(97, 204, 204)
 Notepad.TextScaled = true
 Notepad.TextSize = 14.000
 Notepad.TextWrapped = true
+
+MouseChanger.Name = "MouseChanger"
+MouseChanger.Parent = Holder
+MouseChanger.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+MouseChanger.BackgroundTransparency = 0.500
+MouseChanger.BorderColor3 = Color3.fromRGB(97, 204, 204)
+MouseChanger.Size = UDim2.new(0, 200, 0, 50)
+MouseChanger.Font = Enum.Font.Code
+MouseChanger.Text = "MouseChanger"
+MouseChanger.TextColor3 = Color3.fromRGB(97, 204, 204)
+MouseChanger.TextScaled = true
+MouseChanger.TextSize = 14.000
+MouseChanger.TextWrapped = true
 
 TextLabel.Parent = Top
 TextLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
