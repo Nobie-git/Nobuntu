@@ -250,11 +250,17 @@ AutoCase.MouseButton1Click:Connect(function()
 			for _,x in pairs(game:GetService("ReplicatedStorage").ShopEntries.KnifeSkins:GetChildren()) do
 				game:GetService("ReplicatedStorage").Interactions.Server.BuyShopItem:InvokeServer(x)
 			end
+			wait()
 			for _,x in pairs(game:GetService("ReplicatedStorage").ShopEntries.RevolverSkins:GetChildren()) do
 				game:GetService("ReplicatedStorage").Interactions.Server.BuyShopItem:InvokeServer(x)
 			end
 		end
 	elseif AutoCaseDB == true then
 		AutoCase.BackgroundColor3 = Color3.fromRGB(0,0,0)
+		for _,x in pairs(game.Lighting:GetChildren()) do
+			if x:IsA("BlurEffect") then
+				x:Destroy()
+			end
+		end
 	end
 end)
