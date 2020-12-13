@@ -7,7 +7,7 @@ local CodeItems = Instance.new("TextButton")
 local ChatSpammer = Instance.new("TextButton")
 local ChatSpammerText = Instance.new("TextBox")
 local CoinGrabber = Instance.new("TextButton")
-local AutoCase = Instance.new("TextButton")
+local OpenCases = Instance.new("TextButton")
 local TextLabel = Instance.new("TextLabel")
 local X = Instance.new("TextButton")
 local C = Instance.new("TextButton")
@@ -109,20 +109,20 @@ CoinGrabber.TextSize = 14.000
 CoinGrabber.TextWrapped = true
 CoinGrabber.TextXAlignment = Enum.TextXAlignment.Left
 
-AutoCase.Name = "AutoCase"
-AutoCase.Parent = Holder
-AutoCase.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
-AutoCase.BackgroundTransparency = 0.500
-AutoCase.BorderColor3 = Color3.fromRGB(97, 204, 204)
-AutoCase.Position = UDim2.new(0, 0, 0.300000012, 0)
-AutoCase.Size = UDim2.new(1, 0, 0, 15)
-AutoCase.Font = Enum.Font.Code
-AutoCase.Text = "Auto Case"
-AutoCase.TextColor3 = Color3.fromRGB(97, 204, 204)
-AutoCase.TextScaled = true
-AutoCase.TextSize = 14.000
-AutoCase.TextWrapped = true
-AutoCase.TextXAlignment = Enum.TextXAlignment.Left
+OpenCases.Name = "Open Cases"
+OpenCases.Parent = Holder
+OpenCases.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+OpenCases.BackgroundTransparency = 0.500
+OpenCases.BorderColor3 = Color3.fromRGB(97, 204, 204)
+OpenCases.Position = UDim2.new(0, 0, 0.300000012, 0)
+OpenCases.Size = UDim2.new(1, 0, 0, 15)
+OpenCases.Font = Enum.Font.Code
+OpenCases.Text = "Auto Case"
+OpenCases.TextColor3 = Color3.fromRGB(97, 204, 204)
+OpenCases.TextScaled = true
+OpenCases.TextSize = 14.000
+OpenCases.TextWrapped = true
+OpenCases.TextXAlignment = Enum.TextXAlignment.Left
 
 TextLabel.Parent = Top
 TextLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
@@ -240,11 +240,11 @@ CoinGrabber.MouseButton1Click:Connect(function()
 		CoinGrabber.BackgroundColor3 = Color3.fromRGB(0,0,0)
 	end
 end)
-local AutoCaseDB = false
-AutoCase.MouseButton1Click:Connect(function()
-	AutoCaseDB = not AutoCaseDB
-	if AutoCaseDB == true then 
-		AutoCase.BackgroundColor3 = Color3.fromRGB(97,204,204)
+local OpenCasesDB = false
+OpenCases.MouseButton1Click:Connect(function()
+	OpenCasesDB = not OpenCasesDB
+	if OpenCasesDB == true then 
+		OpenCases.BackgroundColor3 = Color3.fromRGB(97,204,204)
 		for _,x in pairs(game:GetService("ReplicatedStorage").ShopEntries.KnifeSkins:GetChildren()) do
 			game:GetService("ReplicatedStorage").Interactions.Server.BuyShopItem:InvokeServer(x)
 		end
@@ -257,8 +257,8 @@ AutoCase.MouseButton1Click:Connect(function()
 				x:Destroy()
 			end
 		end
-	elseif AutoCaseDB == true then
-		AutoCase.BackgroundColor3 = Color3.fromRGB(0,0,0)
+	elseif OpenCasesDB == true then
+		OpenCases.BackgroundColor3 = Color3.fromRGB(0,0,0)
 		for _,x in pairs(game.Lighting:GetChildren()) do
 			if x:IsA("BlurEffect") then
 				x:Destroy()
