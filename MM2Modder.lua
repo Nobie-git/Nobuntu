@@ -241,7 +241,6 @@ CoinGrabber.MouseButton1Click:Connect(function()
 	end
 end)
 OpenCases.MouseButton1Click:Connect(function()
-	OpenCases.BackgroundColor3 = Color3.fromRGB(97,204,204)
 	for _,x in pairs(game:GetService("ReplicatedStorage").ShopEntries.KnifeSkins:GetChildren()) do
 		wait()
 		game:GetService("ReplicatedStorage").Interactions.Server.BuyShopItem:InvokeServer(x)
