@@ -352,7 +352,7 @@ end)
 MM2Modder.MouseButton1Click:Connect(function()
 	SendNotif("The module won't load if you're not on a game made for this module")
 	loadstring(game:HttpGet('https://raw.githubusercontent.com/Nobie-git/Nobuntu/main/MM2Modder.lua'))()
-	SendNotif("Notepad Module Loaded!")
+	SendNotif("MM2Modder Module Loaded!")
 end)
 
 Reset.MouseButton1Click:Connect(function()
