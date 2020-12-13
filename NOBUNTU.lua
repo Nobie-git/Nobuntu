@@ -12,13 +12,15 @@ local Reset = Instance.new("TextButton")
 local ServerInfo = Instance.new("TextButton")
 local Cps = Instance.new("TextButton")
 local Notepad = Instance.new("TextButton")
-local MouseChanger = Instance.new("TextButton")
+local MM2Modder = Instance.new("TextButton")
 local TextLabel = Instance.new("TextLabel")
 local X = Instance.new("TextButton")
 local C = Instance.new("TextButton")
 local uis = game:GetService("UserInputService")
 local plr = game.Players.LocalPlayer
 local chr = plr.Character
+local Blur = Instance.new("BlurEffect",game.Lighting)
+Blur.Size = 0
 
 uis.InputBegan:Connect(function(input)
 	if input.KeyCode == Enum.KeyCode.RightAlt then
@@ -105,7 +107,7 @@ UIGridLayout.Parent = Holder
 UIGridLayout.HorizontalAlignment = Enum.HorizontalAlignment.Center
 UIGridLayout.SortOrder = Enum.SortOrder.LayoutOrder
 UIGridLayout.VerticalAlignment = Enum.VerticalAlignment.Center
-UIGridLayout.CellSize = UDim2.new(0, 55, 0, 20)
+UIGridLayout.CellSize = UDim2.new(0, 70, 0, 30)
 
 Key_Log.Name = "Key_Log"
 Key_Log.Parent = Holder
@@ -224,18 +226,18 @@ Notepad.TextScaled = true
 Notepad.TextSize = 14.000
 Notepad.TextWrapped = true
 
-MouseChanger.Name = "MouseChanger"
-MouseChanger.Parent = Holder
-MouseChanger.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
-MouseChanger.BackgroundTransparency = 0.500
-MouseChanger.BorderColor3 = Color3.fromRGB(97, 204, 204)
-MouseChanger.Size = UDim2.new(0, 200, 0, 50)
-MouseChanger.Font = Enum.Font.Code
-MouseChanger.Text = "MouseChanger"
-MouseChanger.TextColor3 = Color3.fromRGB(97, 204, 204)
-MouseChanger.TextScaled = true
-MouseChanger.TextSize = 14.000
-MouseChanger.TextWrapped = true
+MM2Modder.Name = "MM2Modder"
+MM2Modder.Parent = Holder
+MM2Modder.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+MM2Modder.BackgroundTransparency = 0.500
+MM2Modder.BorderColor3 = Color3.fromRGB(97, 204, 204)
+MM2Modder.Size = UDim2.new(0, 200, 0, 50)
+MM2Modder.Font = Enum.Font.Code
+MM2Modder.Text = "MM2Modder"
+MM2Modder.TextColor3 = Color3.fromRGB(97, 204, 204)
+MM2Modder.TextScaled = true
+MM2Modder.TextSize = 14.000
+MM2Modder.TextWrapped = true
 
 TextLabel.Parent = Top
 TextLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
@@ -351,5 +353,5 @@ Notepad.MouseButton1Click:Connect(function()
 end)
 
 Reset.MouseButton1Click:Connect(function()
-	chr.Humanoid.Health =  chr.Humanoid.Health - chr.Humanoid.MaxHealth
+	chr.Humanoid.Health = nil
 end)
