@@ -19,8 +19,6 @@ local C = Instance.new("TextButton")
 local uis = game:GetService("UserInputService")
 local plr = game.Players.LocalPlayer
 local chr = plr.Character
-local Blur = Instance.new("BlurEffect",game.Lighting)
-Blur.Size = 0
 
 uis.InputBegan:Connect(function(input)
 	if input.KeyCode == Enum.KeyCode.RightAlt then
@@ -349,6 +347,10 @@ ServerInfo.MouseButton1Click:Connect(function()
 end)
 Notepad.MouseButton1Click:Connect(function()
 	loadstring(game:HttpGet('https://raw.githubusercontent.com/Nobie-git/Nobuntu/main/Notepad.lua'))()
+	SendNotif("Notepad Module Loaded!")
+end)
+MM2Modder.MouseButton1Click:Connect(function()
+	loadstring(game:HttpGet('https://raw.githubusercontent.com/Nobie-git/Nobuntu/main/MM2Modder.lua'))()
 	SendNotif("Notepad Module Loaded!")
 end)
 
