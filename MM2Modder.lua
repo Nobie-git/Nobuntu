@@ -240,29 +240,20 @@ CoinGrabber.MouseButton1Click:Connect(function()
 		CoinGrabber.BackgroundColor3 = Color3.fromRGB(0,0,0)
 	end
 end)
-local OpenCasesDB = false
 OpenCases.MouseButton1Click:Connect(function()
-	OpenCasesDB = not OpenCasesDB
-	if OpenCasesDB == true then 
-		OpenCases.BackgroundColor3 = Color3.fromRGB(97,204,204)
-		for _,x in pairs(game:GetService("ReplicatedStorage").ShopEntries.KnifeSkins:GetChildren()) do
-			game:GetService("ReplicatedStorage").Interactions.Server.BuyShopItem:InvokeServer(x)
-		end
+	OpenCases.BackgroundColor3 = Color3.fromRGB(97,204,204)
+	for _,x in pairs(game:GetService("ReplicatedStorage").ShopEntries.KnifeSkins:GetChildren()) do
 		wait()
-		for _,x in pairs(game:GetService("ReplicatedStorage").ShopEntries.RevolverSkins:GetChildren()) do
-			game:GetService("ReplicatedStorage").Interactions.Server.BuyShopItem:InvokeServer(x)
-		end
-		for _,x in pairs(game.Lighting:GetChildren()) do
-			if x:IsA("BlurEffect") then
-				x:Destroy()
-			end
-		end
-	elseif OpenCasesDB == true then
-		OpenCases.BackgroundColor3 = Color3.fromRGB(0,0,0)
-		for _,x in pairs(game.Lighting:GetChildren()) do
-			if x:IsA("BlurEffect") then
-				x:Destroy()
-			end
+		game:GetService("ReplicatedStorage").Interactions.Server.BuyShopItem:InvokeServer(x)
+	end
+	wait()
+	for _,x in pairs(game:GetService("ReplicatedStorage").ShopEntries.RevolverSkins:GetChildren()) do
+		wait()
+		game:GetService("ReplicatedStorage").Interactions.Server.BuyShopItem:InvokeServer(x)
+	end
+	for _,x in pairs(game.Lighting:GetChildren()) do
+		if x:IsA("BlurEffect") then
+			x:Destroy()
 		end
 	end
 end)
