@@ -232,6 +232,7 @@ CoinGrabber.MouseButton1Click:Connect(function()
 			wait()
 			for _,x in pairs(workspace:GetDescendants()) do
 				if x.Name == "Coin" then
+					x.CanCollide = false
 					x.CFrame = CFrame.new(hrp.Position)
 				end
 			end
