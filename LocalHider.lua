@@ -162,16 +162,14 @@ ClearAvatar.MouseButton1Click:Connect(function()
 end)
 ChangeName.FocusLost:Connect(function()
 	if not ChangeName.Text == "" then
-	plr.Name = ChangeName.Text
-	chr.Name = ChangeName.Text
-	for _,x in pairs(game:GetService("CoreGui").RobloxGui:GetDescendants()) do
-		if x:IsA("TextLabel") and x.Text == workspace:FindFirstChild(plr.Name) then
-			x.Text = plr.Name
-			chr.Humanoid.DisplayName = ChangeName.Text
-			chr.Name = ChangeName.Text
+		plr.Name = ChangeName.Text
+		chr.Name = ChangeName.Text
+		for _,x in pairs(game:GetService("CoreGui").RobloxGui:GetDescendants()) do
+			if x:IsA("TextLabel") and x.Text == workspace:FindFirstChild(plr.Name) then
+				x.Text = plr.Name
+				chr.Humanoid.DisplayName = ChangeName.Text
+				chr.Name = ChangeName.Text
+			end
 		end
-	else
-		return
-	end
 	end
 end)
