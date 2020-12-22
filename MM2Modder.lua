@@ -8,6 +8,7 @@ local ChatSpammer = Instance.new("TextButton")
 local ChatSpammerText = Instance.new("TextBox")
 local CoinGrabber = Instance.new("TextButton")
 local OpenCases = Instance.new("TextButton")
+local GrabGun = Instance.new("TextButton")
 local TextLabel = Instance.new("TextLabel")
 local X = Instance.new("TextButton")
 local C = Instance.new("TextButton")
@@ -15,7 +16,7 @@ local event = game:GetService("ReplicatedStorage").Interactions.Server.SendChatM
 local plr = game.Players.LocalPlayer
 local chr = plr.Character
 local hrp = chr.HumanoidRootPart
---Properties:
+
 
 MM2Modder.Name = "MM2Modder"
 MM2Modder.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")["Nobuntu 1.0"]
@@ -109,7 +110,7 @@ CoinGrabber.TextSize = 14.000
 CoinGrabber.TextWrapped = true
 CoinGrabber.TextXAlignment = Enum.TextXAlignment.Left
 
-OpenCases.Name = "Open Cases"
+OpenCases.Name = "OpenCases"
 OpenCases.Parent = Holder
 OpenCases.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
 OpenCases.BackgroundTransparency = 0.500
@@ -117,12 +118,27 @@ OpenCases.BorderColor3 = Color3.fromRGB(97, 204, 204)
 OpenCases.Position = UDim2.new(0, 0, 0.300000012, 0)
 OpenCases.Size = UDim2.new(1, 0, 0, 15)
 OpenCases.Font = Enum.Font.Code
-OpenCases.Text = "Auto Case"
+OpenCases.Text = "Open Cases"
 OpenCases.TextColor3 = Color3.fromRGB(97, 204, 204)
 OpenCases.TextScaled = true
 OpenCases.TextSize = 14.000
 OpenCases.TextWrapped = true
 OpenCases.TextXAlignment = Enum.TextXAlignment.Left
+
+GrabGun.Name = "GrabGun"
+GrabGun.Parent = Holder
+GrabGun.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+GrabGun.BackgroundTransparency = 0.500
+GrabGun.BorderColor3 = Color3.fromRGB(97, 204, 204)
+GrabGun.Position = UDim2.new(0, 0, 0.300000012, 0)
+GrabGun.Size = UDim2.new(1, 0, 0, 15)
+GrabGun.Font = Enum.Font.Code
+GrabGun.Text = "Grab Gun"
+GrabGun.TextColor3 = Color3.fromRGB(97, 204, 204)
+GrabGun.TextScaled = true
+GrabGun.TextSize = 14.000
+GrabGun.TextWrapped = true
+GrabGun.TextXAlignment = Enum.TextXAlignment.Left
 
 TextLabel.Parent = Top
 TextLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
@@ -230,10 +246,12 @@ CoinGrabber.MouseButton1Click:Connect(function()
 		CoinGrabber.BackgroundColor3 = Color3.fromRGB(97,204,204)
 		while CoinGrabberDB == true do
 			wait()
+			local orgPos = hrp.Position
 			for _,x in pairs(workspace:GetDescendants()) do
 				if x.Name == "Coin" then
-					x.CanCollide = false
-					x.CFrame = CFrame.new(hrp.Position)
+					hrp.CFrame = CFrame.new(x.Position)
+					wait()
+					hrp.CFrame = CFrame.new(orgPos)
 				end
 			end
 		end	
@@ -255,5 +273,13 @@ OpenCases.MouseButton1Click:Connect(function()
 		if x:IsA("BlurEffect") then
 			x:Destroy()
 		end
+	end
+end)
+GrabGun.MouseButton1Click:Connect(function()
+	if workspace.RevolverPickUp then
+		local orgPos = hrp.Position
+		hrp.CFrame = CFrame.new(workspace.RevolverPickUp.Revolver.Position)
+		game:GetService("Workspace").RevolverPickUp.Orb.CFrame = CFrame.new(hrp.Position)
+		hrp.CFrame = CFrame.new(orgPos)
 	end
 end)
