@@ -5,11 +5,14 @@ local Holder = Instance.new("Frame")
 local ClearAvatar = Instance.new("TextButton")
 local UIGridLayout = Instance.new("UIGridLayout")
 local ChangeName = Instance.new("TextBox")
+local HidePlayers = Instance.new("TextButton")
 local TextLabel = Instance.new("TextLabel")
 local X = Instance.new("TextButton")
 local C = Instance.new("TextButton")
 local plr = game.Players.LocalPlayer
 local chr = plr.Character
+
+--Properties:
 
 LocalHider.Name = "LocalHider"
 LocalHider.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")["Nobuntu 1.0"]
@@ -20,7 +23,7 @@ Top.Parent = LocalHider
 Top.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
 Top.BackgroundTransparency = 0.500
 Top.BorderColor3 = Color3.fromRGB(97, 204, 204)
-Top.Position = UDim2.new(0.2015, 0,0.7, 0)
+Top.Position = UDim2.new(0.204999998, 0, 0.699999988, 0)
 Top.Size = UDim2.new(0.129999995, 0, 0.0149999997, 0)
 
 Main.Name = "Main"
@@ -70,6 +73,19 @@ ChangeName.TextColor3 = Color3.fromRGB(97, 204, 204)
 ChangeName.TextSize = 14.000
 ChangeName.TextWrapped = true
 ChangeName.TextXAlignment = Enum.TextXAlignment.Left
+
+HidePlayers.Name = "HidePlayers"
+HidePlayers.Parent = Holder
+HidePlayers.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+HidePlayers.BackgroundTransparency = 0.500
+HidePlayers.BorderColor3 = Color3.fromRGB(97, 204, 204)
+HidePlayers.Size = UDim2.new(0, 200, 0, 50)
+HidePlayers.Font = Enum.Font.Code
+HidePlayers.Text = "Hide Players"
+HidePlayers.TextColor3 = Color3.fromRGB(97, 204, 204)
+HidePlayers.TextSize = 14.000
+HidePlayers.TextWrapped = true
+HidePlayers.TextXAlignment = Enum.TextXAlignment.Left
 
 TextLabel.Parent = Top
 TextLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
@@ -169,6 +185,33 @@ ChangeName.FocusLost:Connect(function()
 				x.Text = plr.Name
 				chr.Humanoid.DisplayName = ChangeName.Text
 				chr.Name = ChangeName.Text
+			end
+		end
+	end
+end)
+local HidePlayersDB = false
+HidePlayers.MouseButton1Click:Connect(function()
+	HidePlayersDB = not HidePlayersDB
+	if HidePlayersDB == true then
+		HidePlayers.BackgroundColor3 = Color3.fromRGB(97,204,204)
+		while HidePlayersDB == true do
+			wait(.1)
+			for _,x in pairs(game.Players:GetChildren()) do
+				if x.Name ~= plr.Name then
+					wait()
+					local wPlr = x.Character
+					wPlr.Parent = game.Lighting
+				end
+			end
+		end
+	elseif HidePlayersDB == false then
+		HidePlayers.BackgroundColor3 = Color3.fromRGB(0,0,0)
+		wait(.1)
+		for _,x in pairs(game.Players:GetChildren()) do
+			if x.Name ~= plr.Name then
+				wait()
+				local wPlr = x.Character
+				wPlr.Parent = workspace
 			end
 		end
 	end
