@@ -198,8 +198,8 @@ HidePlayers.MouseButton1Click:Connect(function()
 			wait(.1)
 			for _,x in pairs(game.Players:GetChildren()) do
 				if x.Name ~= plr.Name then
-					wait()
 					local wPlr = x.Character
+					wPlr:WaitForChild("HumanoidRootPart")
 					wPlr.Parent = game.Lighting
 				end
 			end
@@ -209,8 +209,8 @@ HidePlayers.MouseButton1Click:Connect(function()
 		wait(.1)
 		for _,x in pairs(game.Players:GetChildren()) do
 			if x.Name ~= plr.Name then
-				wait()
 				local wPlr = x.Character
+				wPlr:WaitForChild("HumanoidRootPart")
 				wPlr.Parent = workspace
 			end
 		end
