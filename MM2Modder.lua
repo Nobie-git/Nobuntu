@@ -248,7 +248,7 @@ CoinGrabber.MouseButton1Click:Connect(function()
 			wait()
 			local orgPos = hrp.Position
 			for _,x in pairs(workspace:GetDescendants()) do
-				if x.Name == "Coin" then
+				if x.Name == "Coin" or x.Name == "Gem" then
 					hrp.CFrame = CFrame.new(x.Position)
 					wait()
 					hrp.CFrame = CFrame.new(orgPos)
@@ -279,7 +279,7 @@ GrabGun.MouseButton1Click:Connect(function()
 	if workspace.RevolverPickUp then
 		local orgPos = hrp.Position
 		hrp.CFrame = CFrame.new(workspace.RevolverPickUp.Revolver.Position)
-		game:GetService("Workspace").RevolverPickUp.Orb.CFrame = CFrame.new(hrp.Position)
+		hrp.CFram = game:GetService("Workspace").RevolverPickUp.Orb.CFrame = CFrame.new(hrp.Position)
 		hrp.CFrame = CFrame.new(orgPos)
 	end
 end)
