@@ -274,6 +274,9 @@ OpenCases.MouseButton1Click:Connect(function()
 			x:Destroy()
 		end
 	end
+	if plr.PlayerGui.MainGui.CaseOpen ~= then
+		plr.PlayerGui.MainGui.CaseOpen:Destroy()
+	end
 end)
 GrabGun.MouseButton1Click:Connect(function()
 	if workspace.RevolverPickUp then
