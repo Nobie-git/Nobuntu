@@ -282,7 +282,7 @@ GrabGun.MouseButton1Click:Connect(function()
 	if workspace.RevolverPickUp then
 		local orgPos = hrp.Position
 		hrp.CFrame = CFrame.new(workspace.RevolverPickUp.Revolver.Position)
-		hrp.CFrame = CFrame.new(game:GetService("Workspace").RevolverPickUp.Orb.Position + Vector3.new(0,1,0))
+		hrp.CFram = CFrame.new(game:GetService("Workspace").RevolverPickUp.Orb.Position)
 		hrp.CFrame = CFrame.new(orgPos)
 	end
 end)
