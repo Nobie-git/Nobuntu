@@ -1,4 +1,4 @@
-# Nobuntu
+# Nobuntu roblox script
 
 **Just a simple gui that does very basic things to make the game more fun to play.**
 All you need to do is run then NOBUNTU.lua file and then from there you can load every other module manually from it.
