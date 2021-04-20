@@ -8,5 +8,5 @@ Prefix to toggle the gui ls `right alt`
 
 Here's a loadstring if you want to run it like this.
 ```lua
-loadstring(game:HttpGet("https://github.com/Nobie-git/Nobuntu/blob/main/NOBUNTU.lua", true))()
+loadstring(game:HttpGet('https://raw.githubusercontent.com/Nobie-git/Nobuntu/main/NOBUNTU.lua'))()
 ```
