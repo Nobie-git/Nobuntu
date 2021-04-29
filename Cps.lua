@@ -85,7 +85,9 @@ local cpsVal = 0
 mouse.Button1Down:Connect(function()
 	cpsVal = cpsVal + 1
 end)
-repeat wait(1)
-    Output.Text = "Cps: " .. cpsVal
-    cpsVal = 0
-until Cps.Parent == nil
+spawn(function()
+	repeat wait(1)
+	Output.Text = "Cps: " .. cpsVal
+	cpsVal = 0
+until Cps.Parent == nil	
+end)
