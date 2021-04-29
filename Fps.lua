@@ -3,6 +3,7 @@ local Top = Instance.new("Frame")
 local Output = Instance.new("TextLabel")
 local X = Instance.new("TextButton")
 local C = Instance.new("TextButton")
+local rs = game:GetService"RunService"
 
 Fps.Name = "Fps"
 Fps.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")["Nobuntu 1.0"]
@@ -79,8 +80,14 @@ UserInputService.InputChanged:Connect(function(input)
 		update(input)
 	end
 end)
+
+local fps = 0
+rs.RenderStepped:Connect(function()
+    fps = fps + 1
+end)
 spawn(function()
-    repeat wait(.01)
-	    Output.Text = "Fps: " .. math.floor(workspace:GetRealPhysicsFPS())
+    repeat wait(1)
+	    Output.Text = "Fps: " .. fps
+	    fps = 0
     until Fps.Parent == nil
 end)
